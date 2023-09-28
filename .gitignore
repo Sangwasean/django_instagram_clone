@@ -1,0 +1,24 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore log files
+*.log
+
+# Ignore a specific directory
+myfolder/
+
+# Ignore a specific file
+secret.txt
+#Ignore virtual environments to manage your project dependencies
+venv/
+#Ignore database files
+db.sqlite3
+#ignore static and media files
+static/
+media/
+#Ignore Configuration files used by your code
+.idea/
+.vscode/
+#excludes migrations
+*/migrations/
+
