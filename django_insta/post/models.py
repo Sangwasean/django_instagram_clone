@@ -5,6 +5,7 @@ from django.db.models.signals import post_save, post_delete
 from django.utils.text import slugify
 from django.urls import reverse
 import uuid
+from notification.models import Notification
 
 
 
@@ -75,14 +76,12 @@ class Follow(models.Model):
     follower = models.ForeignKey(User, on_delete=models.CASCADE, related_name='follower')
     following = models.ForeignKey(User, on_delete=models.CASCADE, related_name='following')
 
-
     def user_follow(sender, instance, *args, **kwargs):
         follow = instance
         sender = follow.follower
         following = follow.following
         notify = Notification(sender=sender, user=following, notification_types=3)
         notify.save()
-
 
     def user_unfollow(sender, instance, *args, **kwargs):
         follow = instance
@@ -91,13 +90,11 @@ class Follow(models.Model):
         notify = Notification.objects.filter(sender=sender, user=following, notification_types=3)
         notify.delete()
 
-
 class Stream(models.Model):
     following = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='stream_following')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
     date = models.DateTimeField()
-
 
     def add_post(sender, instance, *args, **kwargs):
         post = instance
