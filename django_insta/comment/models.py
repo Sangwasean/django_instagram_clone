@@ -1,9 +1,9 @@
 from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import User
-from post.models import Post
+from ..post.models import Post
 from django.db.models.signals import post_save, post_delete
-from notification.models import Notification
+from ..notification.models import Notification
 
 
 class Comment(models.Model):

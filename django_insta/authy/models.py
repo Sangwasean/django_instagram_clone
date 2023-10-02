@@ -8,7 +8,7 @@ from django.urls import reverse
 from django.db.models.signals import post_save
 import uuid
 from django.utils import timezone
-from post.models import Post
+from ..post.models import Post
 
 
 class Profile(models.Model):

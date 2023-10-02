@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from comment.models import Comment
+from ..comment.models import Comment
 from django import forms
 
 class NewCommentForm(forms.ModelForm):

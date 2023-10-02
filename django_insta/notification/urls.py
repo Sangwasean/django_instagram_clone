@@ -1,5 +1,5 @@
 from django.urls import path
-from notification.views import ShowNotification, DeleteNotification
+from ..notification.views import ShowNotification, DeleteNotification
 
 urlpatterns = [
     path('', ShowNotification, name='show-notification'),

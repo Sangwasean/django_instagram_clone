@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 
 # from elements import views as e_views
 # from authusers import views as auth_views
-from authy.views import UserProfile, follow
+from ..authy.views import UserProfile, follow
 
 urlpatterns = [
     path('admin/', admin.site.urls),

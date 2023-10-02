@@ -10,12 +10,12 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 
 
-from post.models import Post, Follow, Stream
+from ..post.models import Post, Follow, Stream
 from django.contrib.auth.models import User
-from authy.models import Profile
+from ..authy.models import Profile
 from .forms import EditProfileForm, UserRegisterForm
 from django.urls import resolve
-from comment.models import Comment
+from ..comment.models import Comment
 
 def UserProfile(request, username):
     Profile.objects.get_or_create(user=request.user)

@@ -1,4 +1,4 @@
-from directs.views import inbox, Directs, SendDirect, UserSearch, NewConversation
+from ..directs.views import inbox, Directs, SendDirect, UserSearch, NewConversation
 from django.urls import path
 
 urlpatterns = [

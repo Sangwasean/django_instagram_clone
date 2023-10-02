@@ -5,7 +5,7 @@ from django.db.models.signals import post_save, post_delete
 from django.utils.text import slugify
 from django.urls import reverse
 import uuid
-from notification.models import Notification
+from ..notification.models import Notification
 
 
 

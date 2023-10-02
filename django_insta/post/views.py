@@ -3,13 +3,13 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 
-from post.models import Post, Tag, Follow, Stream, Likes
+from ..post.models import Post, Tag, Follow, Stream, Likes
 from django.contrib.auth.models import User
-from post.forms import NewPostform
-from authy.models import Profile
+from ..post.forms import NewPostform
+from ..authy.models import Profile
 from django.urls import resolve
-from comment.models import Comment
-from comment.forms import NewCommentForm
+from ..comment.models import Comment
+from ..comment.forms import NewCommentForm
 from django.core.paginator import Paginator
 
 from django.db.models import Q
